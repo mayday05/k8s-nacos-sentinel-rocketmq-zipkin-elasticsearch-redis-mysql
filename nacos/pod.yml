@@ -14,6 +14,7 @@ spec:
         app: nacos
       annotations:
         pod.alpha.kubernetes.io/initialized: "true"
+    ## 模板
     spec:
       affinity:
         podAntiAffinity:
@@ -28,6 +29,7 @@ spec:
       containers:
         - name: nacos
           imagePullPolicy: IfNotPresent
+          ## 使用官方最新容器
           image: nacos/nacos-server:latest
           resources:
             requests:
@@ -37,7 +39,7 @@ spec:
             - containerPort: 8848
               name: client
           env:
-            - name: NACOS_REPLICAS
+            - name: NACOS_REPLICAS # 副本数3
               value: "3"
             - name: MYSQL_MASTER_SERVICE_HOST
               valueFrom:

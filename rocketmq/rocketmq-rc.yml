@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: rocketmq
-          image: foxiswho/rocketmq:server
+          image: nexus3.onap.org:10001/rocketmqinc/rocketmq:4.4.0
           imagePullPolicy: IfNotPresent
           resources:
             limits:
@@ -33,7 +33,10 @@ spec:
             - name: JAVA_OPT
               value: -Duser.home=/opt
             - name: JAVA_OPT_EXT
-              value: -server -Xms2000m -Xmx2000m -Xmn256m
+              # Ôö¼Ódebug
+              value: -Xdebug -Xrunjdwp:transport=dt_socket,address=9555,server=y,suspend=n -server -Xms2000m -Xmx2000m -Xmn256m
+          ## Æô¶¯ÃüÁî
+          command: ["/bin/bash","mqnamesrv"]
           ports:
             - containerPort: 9876
           volumeMounts:

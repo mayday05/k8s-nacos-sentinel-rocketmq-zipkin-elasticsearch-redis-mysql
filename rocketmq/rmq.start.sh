@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-
+## 宿主机中创建目录
 mkdir -p /www/k8s/foxdev/rocketmq/logs/*
 mkdir -p /www/k8s/foxdev/rocketmq/logs-b/*
 mkdir -p /www/k8s/foxdev/rocketmq/logs-b-s/*

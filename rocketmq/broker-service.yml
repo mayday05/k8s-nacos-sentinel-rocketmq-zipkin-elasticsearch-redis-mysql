@@ -22,5 +22,10 @@ spec:
       targetPort: 10912
       nodePort: 10912
       name: ha-service
+      # Ôö¼Ódebug¶Ë¿ÚÓ³Éä
+    - port: 9555
+      targetPort: 9555
+      nodePort: 29555
+      name: debug-broker-port
   selector:
     app: rmqbroker

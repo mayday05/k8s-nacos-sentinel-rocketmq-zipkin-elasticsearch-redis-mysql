@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: rmqui
-          image: styletang/rocketmq-console-ng
+          image: nexus3.onap.org:10001/styletang/rocketmq-console-ng:1.0.0
           imagePullPolicy: IfNotPresent
           resources:
             limits:

@@ -12,6 +12,13 @@ spec:
   ports:
     - port: 9876
       targetPort: 9876
-      nodePort: 9876
+      nodePort: 39876
+      #记住如果有多个端口映射时，必须全部增加名称，只有一个是可以不写名字
+      name: namesrv
+      #增加debug端口映射
+    - port: 9555
+      targetPort: 9555
+      nodePort: 29555
+      name: debug-namesrv
   selector:
     app: rocketmq
